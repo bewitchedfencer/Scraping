@@ -1,0 +1,1 @@
+//should have min of headline, summary, url. Can also have photos, bylines, etc.

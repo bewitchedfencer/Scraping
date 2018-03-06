@@ -1,0 +1,33 @@
+<div class="container-fluid">
+<nav class="navbar">
+    <a class="navbar-brand" href="#">New Articles | </a>
+    <a class="navbar-brand" href="#"> Saved Notes </a>
+</nav>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 scrollmenu">
+            {{articles}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-8">
+            <iframe src={{articleUrl}}></iframe>
+        </div>
+        <div class="col-xs-4" id="noteSection">
+            <p>Add notes to a selected article here. Scrape new articles or view notes at the links above</p>
+            <br><br>
+            <hr>
+            <form>
+                Author: <br>
+                <input type="text" name="author">
+                <br>
+                Note: <br>
+                <input type="text" name="note">
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        </div>
+    </div>
+</div>

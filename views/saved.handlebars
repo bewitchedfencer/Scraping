@@ -22,12 +22,12 @@
                     </thead>
                     <tbody>
                         {{#each article}}
-                        <tr><td>{{note.author}}</td>
-                        <td>{{note.body}}</td>
-                        <td><a src="{{article.url}}">{{article.headline}}</a></td>
-                        <td>{{article.summary}}</td>
-                        <td>{{article.byline}}</td>
-                        <td><img src="{{article.photo}}"></td></tr>
+                        <tr><td>{{noteAuthor}}</td>
+                        <td>{{noteBody}}</td>
+                        <td><a src="{{articleUrl}}">{{articleHeadline}}</a></td>
+                        <td>{{articleSummary}}</td>
+                        <td>{{articleByline}}</td>
+                        <td><img src="{{articlePhoto}}"></td></tr>
                         {{/each}}
                     </tbody>
                 </table>

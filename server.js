@@ -6,8 +6,6 @@ var mongoose = require("mongoose");
 
 
 // Our scraping tools
-// Axios is a promised-based http library, similar to jQuery's Ajax method
-// It works on the client and on the server
 var request = require("request");
 var cheerio = require("cheerio");
 
@@ -40,17 +38,15 @@ app.use(express.static("public"));
 
 
 //link to routes
-// follow the below examples from project 2
-// const tutor_routes = require("./routes/tutor-routes.js");
-// // var teacher_routes= require("./routes/teacher-routes.js");
-// const html_routes = require("./routes/html-routes.js");
+const scrape_routes = require('./scripts/scrape.js');
+const api_routes = require('./routes/api.js');
+const view_routes = require('./routes/index.js');
 
-// const auth_routes = require("./routes/auth-routes.js");
-
-// app.use(tutor_routes);
-// // app.use(teacher_routes);
-// app.use(html_routes);
-
-// app.use(auth_routes);
+app.use(scrape_routes);
+app.use(api_routes);
+app.use(view_routes);
 
 //server listening
+app.listen(PORT, function(){
+    console.log(`App running on port ${PORT}`);
+})

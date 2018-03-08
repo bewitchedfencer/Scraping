@@ -14,14 +14,6 @@ var HeadlineSchema = new Schema({
         type: String,
         required: true
     },
-    byline: {
-        type: String,
-        required: false
-    },
-    picture:{
-        type:String,
-        required:false
-    },
     note:
         {
             type: Schema.Types.ObjectId,

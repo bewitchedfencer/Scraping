@@ -4,14 +4,6 @@ var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
-
-// Our scraping tools
-var request = require("request");
-var cheerio = require("cheerio");
-
-// Require all models
-var db = require("./models");
-
 //Establish Server
 var PORT = process.env.PORT || 3000;
 app = express();
@@ -38,11 +30,9 @@ app.use(express.static("public"));
 
 
 //link to routes
-const scrape_routes = require('./scripts/scrape.js');
 const api_routes = require('./routes/api.js');
 const view_routes = require('./routes/index.js');
 
-app.use(scrape_routes);
 app.use(api_routes);
 app.use(view_routes);
 

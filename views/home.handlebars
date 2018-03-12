@@ -1,18 +1,23 @@
 <div class="container-fluid">
 <nav class="navbar">
-    <a class="navbar-brand" href="#">New Articles | </a>
-    <a class="navbar-brand" href="#"> Saved Notes </a>
+    <a class="navbar-brand" href="/scrape" id= "scrapeMore">New Articles | </a>
+    <a class="navbar-brand" href="/viewNotes"> Saved Notes </a>
 </nav>
 </div>
 <div class="container">
     <div class="row">
         <div class="col-xs-12 scrollmenu">
-            {{articles}}
+            {{#each articles}}
+            <div class = "col-xs-4 article" id={{articleID}}>
+                <h2><a href="/articles/{{articleID}}">{{articleHeadline}}</a></h2>
+                <p><a href="/articles/{{articleID}}">{{articleSummary}}</a></p>
+            </div>
+            {{/each}}
         </div>
     </div>
     <div class="row">
         <div class="col-xs-8">
-            <iframe src={{articleUrl}}></iframe>
+            <iframe src="https://climate.nasa.gov/features/?page=0&per_page=40&order=publish_date+desc%2C+created_at+desc&search=&category=98"></iframe>
         </div>
         <div class="col-xs-4" id="noteSection">
             <p>Add notes to a selected article here. Scrape new articles or view notes at the links above</p>
@@ -20,12 +25,12 @@
             <hr>
             <form>
                 Author: <br>
-                <input type="text" name="author">
+                <input type="text" id= "noteAuthor" name="author">
                 <br>
                 Note: <br>
-                <input type="text" name="note">
+                <input type="text" id= "newNote" name="note">
                 <br>
-                <input type="submit" value="Submit">
+                <input type="submit" id= "submitNote" value="Submit">
             </form>
         </div>
         </div>

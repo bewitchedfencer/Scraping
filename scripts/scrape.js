@@ -1,5 +1,5 @@
 
-
+$("#scrapeMore").on("click", function(){
 request("https://climate.nasa.gov/features/?page=0&per_page=15&order=publish_date+desc%2C+created_at+desc&search=&category=98", function(error, response, html) {
     
       // Load the HTML into cheerio, save it to variable
@@ -21,16 +21,28 @@ request("https://climate.nasa.gov/features/?page=0&per_page=15&order=publish_dat
 
         //grabbing the summary
         var summary = $(element).next().text();
-
-        var releaseDate= $(element).prev().text();
     
         // Save these results in an object that we'll push into the results array we defined earlier
         results.push({
           title: title,
-          link: partialLink
+          url: partialLink,
+          summary: summary,
         });
       });
     
       // Log the results once you've looped through each of the elements found with cheerio
       console.log(results);
+      $.ajax({
+        url: "/scraped",
+        method:"POST",
+        data:{
+          newArticles:results
+        }
+        }).done(function(error){
+          if(error) throw error;
+          console.log("New articles have been scraped from NASA's Climate Website");
+        });
     });
+
+
+  });

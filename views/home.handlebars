@@ -8,16 +8,16 @@
     <div class="row">
         <div class="col-xs-12 scrollmenu">
             {{#each articles}}
-            <div class = "col-xs-4 article" id={{articleID}}>
-                <h2><a href="/articles/{{articleID}}">{{articleHeadline}}</a></h2>
-                <p><a href="/articles/{{articleID}}">{{articleSummary}}</a></p>
+            <div class = "col-xs-4 article" id={{_id}} data-url={{url}}>
+                <h2><a href="{{url}}">{{title}}</a></h2>
+                <p><a href="{{url}}">{{summary}}</a></p>
             </div>
             {{/each}}
         </div>
     </div>
     <div class="row">
         <div class="col-xs-8">
-            <iframe src="https://climate.nasa.gov/features/?page=0&per_page=40&order=publish_date+desc%2C+created_at+desc&search=&category=98"></iframe>
+            <iframe class="viewArticle" id=001 src="https://climate.nasa.gov/features/?page=0&per_page=40&order=publish_date+desc%2C+created_at+desc&search=&category=98"></iframe>
         </div>
         <div class="col-xs-4" id="noteSection">
             <p>Add notes to a selected article here. Scrape new articles or view notes at the links above</p>

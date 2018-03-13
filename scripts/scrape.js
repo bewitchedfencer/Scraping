@@ -1,4 +1,4 @@
-
+//front end JS with the on click event for scraping and the ajax request
 $("#scrapeMore").on("click", function(){
 request("https://climate.nasa.gov/features/?page=0&per_page=15&order=publish_date+desc%2C+created_at+desc&search=&category=98", function(error, response, html) {
     

@@ -5,24 +5,18 @@ var db = ("./models");
 
 // rendering the route to the home page
 
-//scraping the new articles
-router.post("/scraped", function(req, res){
-    var article = req.body;
-    db.Headline.insert(article).then(function(response){
-       console.log("New articles scraped and added to Database");
-       redirect.reload("/");
-    });
-});
-
 router.get("/", function(req, res){
     db.Headline.find().then(function(results){
         res.render("home", {articles:results})
-    })
-})
+    });
+});
 
 //rendering the route to the saved notes page
+router.get("/viewNotes", function(req, res){
 
-//patch route for updating the iframe with the selected article
-router.get("/article/:id", function(req, res){
+});
+
+//add a note to an article on the home page
+router.post("/articles/:id", function(req, res){
     
-})
+});

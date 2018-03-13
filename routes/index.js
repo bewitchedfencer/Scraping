@@ -13,10 +13,9 @@ router.get("/", function(req, res){
 
 //rendering the route to the saved notes page
 router.get("/viewNotes", function(req, res){
-
-});
-
-//add a note to an article on the home page
-router.post("/articles/:id", function(req, res){
-    
+    db.Headline.find()
+    .populate('note')
+    .then(function(results){
+        res.render('saved', {notes:results})
+    })
 });

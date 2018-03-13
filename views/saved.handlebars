@@ -19,11 +19,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{#each article}}
-                        <tr><td>{{noteAuthor}}</td>
-                        <td>{{noteBody}}</td>
-                        <td><a src="{{articleUrl}}">{{articleHeadline}}</a></td>
-                        <td>{{articleSummary}}</td>
+                        {{#each notes}}
+                        <tr><td>{{note.author}}</td>
+                        <td>{{note.body}}</td>
+                        <td><a src="{{url}}">{{title}}</a></td>
+                        <td>{{summary}}</td>
                         {{/each}}
                     </tbody>
                 </table>

@@ -12,13 +12,13 @@ $(".article").on('click', function(){
 $("#submitNote").on('click', function(){
     var body = $("#newNote").text().trim();
     var author = $("#noteAuthor").text().trim();
-    var artID = $(".viewArticle").attr('id');
+    var article = $(".viewArticle").attr('id');
     var newNote = {
         body,
         author
     };
     $.ajax({
-        url:`/articles/${artID}`,
+        url:`/articles/${article}`,
         method:'POST',
         data: {
             newNote
